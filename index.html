@@ -1,168 +1,274 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nimit Generates</title>
 
-  <!-- SEO Meta Tags -->
-  <meta name="title" content="Nimit Generates | Fun Tech for Students">
-  <meta name="description" content="Official site of Nimit Generates – Explore and download smart Python projects like Jarvis, Spyder, and SpyderRobot for student coders.">
-  <meta name="keywords" content="Nimit Generates, Jarvis AI, Spyder, SpyderRobot, Squirrel Calculator, Python Projects, Teen Coding, Student Robotics, AI Assistant, Arduino Robot">
-  <meta name="author" content="Nimit">
-  <meta name="robots" content="index, follow">
-
-  <!-- Open Graph Meta Tags -->
-  <meta property="og:title" content="Nimit Generates | Fun Tech for Students">
-  <meta property="og:description" content="Smart projects like Jarvis, Spyder, and SpyderRobot designed for school students. Fun meets code!">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://nimitgenerates.org">
-  <meta property="og:image" content="https://nimitgenerates.org/assets/preview.png">
-
-  <title>Nimit Generates | Fun Tech for Students</title>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Fredoka+One&display=swap" rel="stylesheet">
+  <!-- FONT -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
+
     body {
-      font-family: 'Fredoka One', cursive;
-      background: #f6f6f6;
-      color: #222;
+      font-family: 'Inter', sans-serif;
+      background: #0d0d0d;
+      color: white;
       overflow-x: hidden;
+      position: relative;
     }
+
+    /* 🌌 Floating Particles */
+    .particle {
+      position: fixed;
+      width: 4px; height: 4px;
+      background: rgba(255,255,255,0.4);
+      border-radius: 50%;
+      animation: float 12s infinite linear;
+      z-index: 1;
+    }
+
+    @keyframes float {
+      0% { transform: translateY(0) translateX(0); opacity: .4; }
+      50% { opacity: 1; }
+      100% { transform: translateY(-120vh) translateX(20vw); opacity: 0; }
+    }
+
+    /* HEADER */
     header {
-      background: #ffda79;
-      padding: 1rem 2rem;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%;
+      padding: 1rem 3rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      background: rgba(0,0,0,0.5);
+      backdrop-filter: blur(15px);
+      z-index: 100;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
     }
+
     header h1 {
-      font-size: 1.8rem;
-      color: #2d3436;
+      font-size: 1.5rem;
+      font-weight: 700;
+      letter-spacing: 1px;
     }
+
     nav a {
-      margin-left: 1rem;
-      color: #2d3436;
+      margin-left: 2rem;
+      color: #bbb;
       text-decoration: none;
-      font-size: 1rem;
-    }
-    .hero {
+      font-weight: 400;
+      transition: 0.3s;
       position: relative;
-      height: 90vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-direction: column;
-      text-align: center;
-      color: #fff;
-      overflow: hidden;
     }
-    .hero video {
+
+    /* ⚡ Tesla-style underline */
+    nav a::after {
+      content: "";
       position: absolute;
-      top: 0;
-      left: 0;
+      left: 0; bottom: -3px;
+      width: 0%;
+      height: 2px;
+      background: #fff;
+      transition: 0.3s ease;
+    }
+
+    nav a:hover::after {
       width: 100%;
-      height: 100%;
-      object-fit: cover;
+    }
+
+    /* HERO */
+    .hero {
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      padding: 2rem;
+      text-align: center;
+      position: relative;
+    }
+
+    /* 🔥 Animated Radial Glow */
+    .glow {
+      position: absolute;
+      width: 600px;
+      height: 600px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(255,255,255,0.08), transparent 70%);
+      animation: pulse 6s ease-in-out infinite alternate;
       z-index: -1;
     }
+
+    @keyframes pulse {
+      from { transform: scale(1); opacity: .6; }
+      to { transform: scale(1.3); opacity: .3; }
+    }
+
     .hero h2 {
-      font-size: 3rem;
+      font-size: 3.2rem;
       font-weight: 700;
-      text-shadow: 2px 2px 5px #000;
+      background: linear-gradient(90deg, #ffffff, #888888);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: shine 4s linear infinite;
     }
+
+    @keyframes shine {
+      from { background-position: 0%; }
+      to { background-position: 200%; }
+    }
+
     .hero p {
-      font-size: 1.3rem;
-      margin: 1rem 0;
-      text-shadow: 2px 2px 5px #000;
+      font-size: 1.2rem;
+      opacity: 0.85;
+      margin-top: 1rem;
     }
+
+    /* PROJECT GRID */
     .projects {
-      padding: 4rem 2rem;
+      padding: 6rem 3rem;
       display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 2rem;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      position: relative;
+      z-index: 5;
     }
+
+    /* ✨ Card Light Glow Background */
+    .projects::before {
+      content: "";
+      position: absolute;
+      left: 50%;
+      top: -200px;
+      transform: translateX(-50%);
+      width: 900px;
+      height: 900px;
+      background: radial-gradient(circle, rgba(255,255,255,0.06), transparent 70%);
+      filter: blur(40px);
+      z-index: -1;
+    }
+
     .card {
-      background: #ffeaa7;
-      border: 2px dashed #fdcb6e;
-      border-radius: 15px;
-      padding: 1.5rem;
-      text-align: center;
-      transition: transform 0.3s ease;
+      background: #111;
+      padding: 2rem;
+      border-radius: 18px;
+      border: 1px solid rgba(255,255,255,0.12);
+      transition: 0.3s;
+      transform: translateY(30px);
+      opacity: 0;
     }
+
+    .visible {
+      transform: translateY(0);
+      opacity: 1;
+    }
+
     .card:hover {
+      border-color: rgba(255,255,255,0.3);
+      transform: translateY(-5px);
+      box-shadow: 0 0 20px rgba(255,255,255,0.08);
+    }
+
+    .card h3 {
+      margin-bottom: .7rem;
+      font-size: 1.4rem;
+    }
+
+    .card p {
+      opacity: 0.7;
+      font-size: 0.95rem;
+      margin-bottom: 1.2rem;
+    }
+
+    /* FUTURISTIC BUTTONS */
+    .card button {
+      background: linear-gradient(90deg, #ffffff, #bdbdbd);
+      color: black;
+      border: none;
+      padding: 0.7rem 1.5rem;
+      border-radius: 30px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: 0.3s ease;
+    }
+
+    .card button:hover {
+      background: white;
       transform: scale(1.05);
     }
-    .card h3 {
-      margin-bottom: 1rem;
-    }
-    .card p {
-      font-size: 0.95rem;
-      margin-bottom: 1rem;
-      color: #444;
-    }
-    .card button {
-      background: #fab1a0;
-      color: #2d3436;
-      border: none;
-      padding: 0.6rem 1.2rem;
-      border-radius: 8px;
-      cursor: pointer;
-      font-weight: bold;
-    }
-    .card button:disabled {
-      background: #dfe6e9;
-      cursor: not-allowed;
-    }
-    #about {
-      padding: 3rem 2rem;
-      background: #ffeaa7;
-      text-align: center;
-    }
-    #about h2 {
-      font-size: 2rem;
-      margin-bottom: 1rem;
-    }
-    #about p {
-      max-width: 800px;
-      margin: 0 auto;
-      font-size: 1rem;
-      color: #2d3436;
-    }
+
+    /* FEATURES */
     .features {
-      background: #f6e58d;
-      padding: 3rem 2rem;
+      padding: 5rem 3rem;
       text-align: center;
+      background: #0f0f0f;
     }
-    .features h2 {
-      margin-bottom: 2rem;
-    }
+
     .features-list {
       display: flex;
-      flex-wrap: wrap;
       justify-content: center;
+      flex-wrap: wrap;
       gap: 2rem;
     }
+
     .feature {
-      background: #ffeaa7;
-      padding: 1.5rem;
-      border-radius: 15px;
-      width: 250px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    }
-    .feature h4 {
-      margin-bottom: 0.5rem;
-    }
-    footer {
-      text-align: center;
+      background: #111;
       padding: 2rem;
-      background: #fdcb6e;
-      color: #2d3436;
+      width: 250px;
+      border-radius: 15px;
+      border: 1px solid rgba(255,255,255,0.12);
+      transition: 0.3s ease;
+    }
+
+    .feature:hover {
+      transform: scale(1.05);
+      border-color: rgba(255,255,255,0.25);
+    }
+
+    /* ABOUT */
+    #about {
+      padding: 5rem 3rem;
+      text-align: center;
+      background: #000;
+    }
+
+    #about p {
+      margin-top: 1rem;
+      opacity: 0.8;
+      max-width: 800px;
+      margin-inline: auto;
+    }
+
+    /* FOOTER */
+    footer {
+      padding: 2rem;
+      text-align: center;
+      opacity: 0.6;
+      font-size: 0.9rem;
+      background: #0d0d0d;
     }
   </style>
 </head>
+
 <body>
+
+  <!-- 🌌 AUTO-GENERATED PARTICLES -->
+  <script>
+    for (let i = 0; i < 25; i++) {
+      const p = document.createElement("div");
+      p.classList.add("particle");
+      p.style.left = Math.random() * 100 + "vw";
+      p.style.top = Math.random() * 100 + "vh";
+      p.style.animationDuration = 8 + Math.random() * 12 + "s";
+      document.body.appendChild(p);
+    }
+  </script>
+
+  <!-- HEADER -->
   <header>
     <h1>Nimit Generates</h1>
     <nav>
@@ -172,85 +278,97 @@
     </nav>
   </header>
 
+  <!-- HERO -->
   <section class="hero">
-    <video autoplay muted loop>
-      <source src="https://assets.mixkit.co/videos/preview/mixkit-happy-cartoon-landscape-4204-large.mp4" type="video/mp4">
-      Your browser does not support the video tag.
-    </video>
-    <h2>Fun Tech for Young Minds</h2>
-    <p>Build cool stuff with Python, voice commands, and robots!</p>
+    <div class="glow"></div>
+
+    <h2>Build Smarter. Build Cooler.</h2>
+    <p>AI Assistants • Robots • Python Tools — by a student, for students.</p>
   </section>
 
-  <section class="projects" id="projects">
+  <!-- PROJECTS -->
+  <section id="projects" class="projects">
     <div class="card">
       <h3>Jarvis</h3>
-      <p>An intelligent desktop assistant that tells time, jokes, and follows your voice.</p>
-      <button onclick="window.open('https://github.com/Nimitg2012/JARVIS', '_blank')">Download Jarvis</button>
+      <p>An intelligent assistant with voice commands, jokes, weather & more.</p>
+      <button onclick="window.open('https://github.com/Nimitg2012/JARVIS')">Download</button>
     </div>
+
     <div class="card">
       <h3>Spyder</h3>
-      <p>A fun Spider-Man-themed assistant that learns from your style and adapts.</p>
-      <button onclick="window.open('https://github.com/Nimitg2012/spyderr', '_blank')">Download Spyder</button>
+      <p>A Spider-themed adaptive assistant that learns your style.</p>
+      <button onclick="window.open('https://github.com/Nimitg2012/spyderr')">Download</button>
     </div>
+
     <div class="card">
       <h3>Pixy</h3>
-      <p>Pixy is your smart, voice-activated assistant that helps you take notes, manage tasks, and stay productive — all with just a few words. 🧠🎙️</p>
-      <button onclick="window.open('https://github.com/Nimitg2012/Pixy', '_blank')">Download Pixy</button>
+      <p>Voice-activated assistant for notes, tasks & productivity.</p>
+      <button onclick="window.open('https://github.com/Nimitg2012/Pixy')">Download</button>
     </div>
+
     <div class="card">
       <h3>SpyderRobot</h3>
-      <p>A Python-powered 4-legged spider robot for Arduino and student makers. 🕷️</p>
-      <button onclick="window.open('https://github.com/Nimitg2012/Spyderr-Robot', '_blank')">Download SpyderRobot</button>
+      <p>Python-powered 4-legged robot for Arduino student makers.</p>
+      <button onclick="window.open('https://github.com/Nimitg2012/Spyderr-Robot')">Download</button>
     </div>
+
     <div class="card">
       <h3>Squirrel</h3>
-      <p>Squirrel is a smart calculator assistant that solves math with brain-like precision. 🧮</p>
-      <button onclick="window.open('https://github.com/Nimitg2012/Squirrel', '_blank')">Download Squirrel</button>
+      <p>Smart calculator assistant using brain-style reasoning.</p>
+      <button onclick="window.open('https://github.com/Nimitg2012/Squirrel')">Download</button>
     </div>
+
     <div class="card">
       <h3>Scriptly</h3>
-      <p>Scriptly is a voice and text-powered coding assistant that writes Python for you. Just speak and code! 🐍🗣️</p>
-      <button onclick="window.open('https://github.com/Nimitg2012/Scriptly', '_blank')">Download Scriptly</button>
+      <p>Speak Python into existence. Your personal coding assistant.</p>
+      <button onclick="window.open('https://github.com/Nimitg2012/Scriptly')">Download</button>
     </div>
-    <!-- New JS4 Card -->
+
     <div class="card">
       <h3>JS4</h3>
-      <p>JS4 is the upgraded, faster version of Squirrel — an AI-powered calculator that solves complex problems instantly. ⚡🧮</p>
-      <button onclick="window.open('https://github.com/Nimitg2012/JS4', '_blank')">Download JS4</button>
+      <p>Next-gen lightning-fast AI calculator for instant answers.</p>
+      <button onclick="window.open('https://github.com/Nimitg2012/JS4')">Download</button>
     </div>
   </section>
 
+  <!-- FEATURES -->
   <section class="features">
     <h2>Why Students Love Nimit Generates</h2>
+
     <div class="features-list">
-      <div class="feature">
-        <h4>🧠 Smart Projects</h4>
-        <p>Use real AI and Python logic like a tech wizard.</p>
-      </div>
-      <div class="feature">
-        <h4>🎮 Interactive</h4>
-        <p>Talk to Jarvis, build robots, and have fun coding!</p>
-      </div>
-      <div class="feature">
-        <h4>📚 Learn by Doing</h4>
-        <p>Every project is hands-on and helps you grow as a coder.</p>
-      </div>
-      <div class="feature">
-        <h4>👦 Built for Students</h4>
-        <p>Created by a student for students — simple and exciting.</p>
-      </div>
+      <div class="feature"><h3>🧠 Smart Projects</h3><p>AI, logic & real programming — made simple.</p></div>
+      <div class="feature"><h3>🎮 Interactive</h3><p>Talk to assistants, control robots, learn by doing.</p></div>
+      <div class="feature"><h3>📚 Hands-On Learning</h3><p>Every project helps you grow.</p></div>
+      <div class="feature"><h3>👦 Student-Friendly</h3><p>Created by a student, for students.</p></div>
     </div>
   </section>
 
+  <!-- ABOUT -->
   <section id="about">
     <h2>About Nimit Generates</h2>
     <p>
-      Nimit Generates is a student-made initiative to help young learners explore the world of AI, coding, and robotics through fun and relatable projects. Inspired by cartoons, tech, and interactive games like Pokémon, we’re on a mission to make tech magical and meaningful. Every tool here is designed for curious school students who want to build real things that work. Come join the fun!
+      Nimit Generates helps young learners explore AI, coding & robotics through real, working projects.
+      Designed for students who want to build things that actually work.
+      Learn, code, create — and have fun doing it.
     </p>
   </section>
 
+  <!-- FOOTER -->
   <footer>
-    <p>&copy; 2025 Nimit Generates. Tech for the curious mind!</p>
+    © 2025 Nimit Generates — Built for curious creators.
   </footer>
+
+  <!-- Fade-in Animation -->
+  <script>
+    const cards = document.querySelectorAll('.card');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add('visible');
+      });
+    });
+
+    cards.forEach(card => observer.observe(card));
+  </script>
+
 </body>
 </html>
