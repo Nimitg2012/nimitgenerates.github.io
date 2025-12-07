@@ -5,14 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Nimit Generates</title>
 
-  <!-- Favicon + App Icons -->
   <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
-  <link rel="manifest" href="site.webmanifest">
-  <link rel="shortcut icon" href="favicon.ico">
 
-  <!-- FONT -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
   <style>
@@ -22,15 +18,81 @@
       font-family: 'Inter', sans-serif;
       background: #0d0d0d;
       color: white;
-      overflow-x: hidden;
       position: relative;
+      overflow-x: hidden;
+      transition: background .3s ease, color .3s ease;
     }
 
-    /* 🌌 Floating Particles */
+    /* 🌞 LIGHT MODE FIXES */
+    body.light {
+      background: #f6f6f6;
+      color: #111;
+    }
+
+    body.light header {
+      background: rgba(255,255,255,0.7);
+      border-bottom-color: rgba(0,0,0,0.2);
+    }
+
+    body.light nav a { color: #222; }
+    body.light nav a::after { background: #000; }
+
+    /* Cards */
+    body.light .card {
+      background: #fff;
+      color: #000;
+      border-color: rgba(0,0,0,0.15);
+    }
+
+    /* Features */
+    body.light .feature {
+      background: #fff;
+      border-color: rgba(0,0,0,0.2);
+      color: #000;
+    }
+
+    body.light .features {
+      background: #fdfdfd;
+    }
+
+    body.light #about {
+      background: #fdfdfd;
+    }
+
+    body.light footer {
+      background: #fdfdfd;
+      color: #000;
+    }
+
+    /* 🌞 LIGHT MODE Hero Glow (Black) */
+    body.light .glow {
+      background: radial-gradient(circle, rgba(0,0,0,0.18), transparent 70%);
+    }
+
+    /* Toggle Button */
+    .theme-toggle {
+      padding: .45rem 1.2rem;
+      border-radius: 20px;
+      border: 1px solid rgba(255,255,255,0.3);
+      background: rgba(255,255,255,0.15);
+      cursor: pointer;
+      font-size: 0.9rem;
+      color: white;
+      transition: 0.25s ease;
+      backdrop-filter: blur(10px);
+    }
+
+    body.light .theme-toggle {
+      background: rgba(0,0,0,0.08);
+      color: #111;
+      border-color: rgba(0,0,0,0.4);
+    }
+
+    /* PARTICLES */
     .particle {
       position: fixed;
-      width: 4px; height: 4px;
-      background: rgba(255,255,255,0.4);
+      width: 4px;
+      height: 4px;
       border-radius: 50%;
       animation: float 12s infinite linear;
       z-index: 1;
@@ -52,40 +114,31 @@
       justify-content: space-between;
       align-items: center;
       background: rgba(0,0,0,0.5);
+      border-bottom: 1px solid rgba(255,255,255,0.15);
       backdrop-filter: blur(15px);
       z-index: 100;
-      border-bottom: 1px solid rgba(255,255,255,0.1);
-    }
-
-    header h1 {
-      font-size: 1.5rem;
-      font-weight: 700;
-      letter-spacing: 1px;
+      transition: .3s ease;
     }
 
     nav a {
       margin-left: 2rem;
       color: #bbb;
       text-decoration: none;
-      font-weight: 400;
-      transition: 0.3s;
       position: relative;
+      transition: 0.3s;
     }
 
-    /* ⚡ Tesla-style underline */
     nav a::after {
       content: "";
       position: absolute;
       left: 0; bottom: -3px;
       width: 0%;
       height: 2px;
-      background: #fff;
-      transition: 0.3s ease;
+      background: white;
+      transition: .3s;
     }
 
-    nav a:hover::after {
-      width: 100%;
-    }
+    nav a:hover::after { width: 100%; }
 
     /* HERO */
     .hero {
@@ -94,19 +147,18 @@
       justify-content: center;
       align-items: center;
       flex-direction: column;
-      padding: 2rem;
       text-align: center;
+      padding: 2rem;
       position: relative;
     }
 
-    /* 🔥 Animated Radial Glow */
     .glow {
       position: absolute;
       width: 600px;
       height: 600px;
       border-radius: 50%;
-      background: radial-gradient(circle, rgba(255,255,255,0.08), transparent 70%);
-      animation: pulse 6s ease-in-out infinite alternate;
+      background: radial-gradient(circle, rgba(255,255,255,0.12), transparent 70%);
+      animation: pulse 6s infinite alternate;
       z-index: -1;
     }
 
@@ -115,48 +167,12 @@
       to { transform: scale(1.3); opacity: .3; }
     }
 
-    .hero h2 {
-      font-size: 3.2rem;
-      font-weight: 700;
-      background: linear-gradient(90deg, #ffffff, #888888);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      animation: shine 4s linear infinite;
-    }
-
-    @keyframes shine {
-      from { background-position: 0%; }
-      to { background-position: 200%; }
-    }
-
-    .hero p {
-      font-size: 1.2rem;
-      opacity: 0.85;
-      margin-top: 1rem;
-    }
-
-    /* PROJECT GRID */
+    /* PROJECTS */
     .projects {
       padding: 6rem 3rem;
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 2rem;
-      position: relative;
-      z-index: 5;
-    }
-
-    /* ✨ Card Light Glow Background */
-    .projects::before {
-      content: "";
-      position: absolute;
-      left: 50%;
-      top: -200px;
-      transform: translateX(-50%);
-      width: 900px;
-      height: 900px;
-      background: radial-gradient(circle, rgba(255,255,255,0.06), transparent 70%);
-      filter: blur(40px);
-      z-index: -1;
     }
 
     .card {
@@ -164,48 +180,14 @@
       padding: 2rem;
       border-radius: 18px;
       border: 1px solid rgba(255,255,255,0.12);
-      transition: 0.3s;
       transform: translateY(30px);
       opacity: 0;
+      transition: .4s;
     }
 
-    .visible {
-      transform: translateY(0);
+    .card.visible {
       opacity: 1;
-    }
-
-    .card:hover {
-      border-color: rgba(255,255,255,0.3);
-      transform: translateY(-5px);
-      box-shadow: 0 0 20px rgba(255,255,255,0.08);
-    }
-
-    .card h3 {
-      margin-bottom: .7rem;
-      font-size: 1.4rem;
-    }
-
-    .card p {
-      opacity: 0.7;
-      font-size: 0.95rem;
-      margin-bottom: 1.2rem;
-    }
-
-    /* FUTURISTIC BUTTONS */
-    .card button {
-      background: linear-gradient(90deg, #ffffff, #bdbdbd);
-      color: black;
-      border: none;
-      padding: 0.7rem 1.5rem;
-      border-radius: 30px;
-      cursor: pointer;
-      font-weight: 600;
-      transition: 0.3s ease;
-    }
-
-    .card button:hover {
-      background: white;
-      transform: scale(1.05);
+      transform: translateY(0);
     }
 
     /* FEATURES */
@@ -213,13 +195,7 @@
       padding: 5rem 3rem;
       text-align: center;
       background: #0f0f0f;
-    }
-
-    .features-list {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 2rem;
+      transition: background .3s ease;
     }
 
     .feature {
@@ -231,48 +207,50 @@
       transition: 0.3s ease;
     }
 
-    .feature:hover {
-      transform: scale(1.05);
-      border-color: rgba(255,255,255,0.25);
-    }
-
     /* ABOUT */
     #about {
       padding: 5rem 3rem;
-      text-align: center;
       background: #000;
-    }
-
-    #about p {
-      margin-top: 1rem;
-      opacity: 0.8;
-      max-width: 800px;
-      margin-inline: auto;
+      text-align: center;
     }
 
     /* FOOTER */
     footer {
       padding: 2rem;
       text-align: center;
-      opacity: 0.6;
-      font-size: 0.9rem;
+      opacity: 0.7;
       background: #0d0d0d;
+      transition: .3s ease;
     }
   </style>
 </head>
 
 <body>
 
-  <!-- 🌌 AUTO-GENERATED PARTICLES -->
+  <!-- PARTICLE SCRIPT -->
   <script>
-    for (let i = 0; i < 25; i++) {
-      const p = document.createElement("div");
-      p.classList.add("particle");
-      p.style.left = Math.random() * 100 + "vw";
-      p.style.top = Math.random() * 100 + "vh";
-      p.style.animationDuration = 8 + Math.random() * 12 + "s";
-      document.body.appendChild(p);
+    function createParticles(color) {
+      document.querySelectorAll(".particle").forEach(p => p.remove());
+      for (let i = 0; i < 25; i++) {
+        const p = document.createElement("div");
+        p.classList.add("particle");
+        p.style.left = Math.random() * 100 + "vw";
+        p.style.top = Math.random() * 100 + "vh";
+        p.style.background = color;
+        p.style.animationDuration = (8 + Math.random()*10) + "s";
+        document.body.appendChild(p);
+      }
     }
+
+    function updateParticleMode() {
+      if (document.body.classList.contains("light")) {
+        createParticles("rgba(0,0,0,0.4)"); // 🟤 black particles
+      } else {
+        createParticles("rgba(255,255,255,0.4)"); // ⚪ white particles
+      }
+    }
+
+    updateParticleMode();
   </script>
 
   <!-- HEADER -->
@@ -282,82 +260,43 @@
       <a href="#projects">Projects</a>
       <a href="https://github.com/Nimitg2012" target="_blank">GitHub</a>
       <a href="#about">About</a>
+      <button class="theme-toggle" onclick="toggleTheme()">🌙 Light Mode</button>
     </nav>
   </header>
 
   <!-- HERO -->
   <section class="hero">
     <div class="glow"></div>
-
     <h2>Build Smarter. Build Cooler.</h2>
     <p>AI Assistants • Robots • Python Tools — by a student, for students.</p>
   </section>
 
   <!-- PROJECTS -->
   <section id="projects" class="projects">
-    <div class="card">
-      <h3>Jarvis</h3>
-      <p>An intelligent assistant with voice commands, jokes, weather & more.</p>
-      <button onclick="window.open('https://github.com/Nimitg2012/JARVIS')">Download</button>
-    </div>
-
-    <div class="card">  
-      <h3>Spyder</h3>
-      <p>A Spider-themed adaptive assistant that learns your style.</p>
-      <button onclick="window.open('https://github.com/Nimitg2012/spyderr')">Download</button>
-    </div>
-
-    <div class="card">
-      <h3>Pixy</h3>
-      <p>Voice-activated assistant for notes, tasks & productivity.</p>
-      <button onclick="window.open('https://github.com/Nimitg2012/Pixy')">Download</button>
-    </div>
-
-    <div class="card">
-      <h3>SpyderRobot</h3>
-      <p>Python-powered 4-legged robot for Arduino student makers.</p>
-      <button onclick="window.open('https://github.com/Nimitg2012/Spyderr-Robot')">Download</button>
-    </div>
-
-    <div class="card">
-      <h3>Squirrel</h3>
-      <p>Smart calculator assistant using brain-style reasoning.</p>
-      <button onclick="window.open('https://github.com/Nimitg2012/Squirrel')">Download</button>
-    </div>
-
-    <div class="card">
-      <h3>Scriptly</h3>
-      <p>Speak Python into existence. Your personal coding assistant.</p>
-      <button onclick="window.open('https://github.com/Nimitg2012/Scriptly')">Download</button>
-    </div>
-
-    <div class="card">
-      <h3>JS4</h3>
-      <p>Next-gen lightning-fast AI calculator for instant answers.</p>
-      <button onclick="window.open('https://github.com/Nimitg2012/JS4')">Download</button>
-    </div>
+    <div class="card"><h3>Jarvis</h3><p>An intelligent assistant with voice commands.</p></div>
+    <div class="card"><h3>Spyder</h3><p>A Spider-themed adaptive AI assistant.</p></div>
+    <div class="card"><h3>Pixy</h3><p>Voice notes and productivity assistant.</p></div>
+    <div class="card"><h3>SpyderRobot</h3><p>A 4-legged Arduino robot.</p></div>
+    <div class="card"><h3>Squirrel</h3><p>A reasoning-based smart calculator.</p></div>
+    <div class="card"><h3>Scriptly</h3><p>Speak Python into existence.</p></div>
+    <div class="card"><h3>JS4</h3><p>Lightning-fast instant calculator.</p></div>
   </section>
 
   <!-- FEATURES -->
   <section class="features">
     <h2>Why Students Love Nimit Generates</h2>
-
-    <div class="features-list">
-      <div class="feature"><h3>🧠 Smart Projects</h3><p>AI, logic & real programming — made simple.</p></div>
-      <div class="feature"><h3>🎮 Interactive</h3><p>Talk to assistants, control robots, learn by doing.</p></div>
-      <div class="feature"><h3>📚 Hands-On Learning</h3><p>Every project helps you grow.</p></div>
-      <div class="feature"><h3>👦 Student-Friendly</h3><p>Created by a student, for students.</p></div>
+    <div style="display:flex;justify-content:center;flex-wrap:wrap;gap:2rem;">
+      <div class="feature"><h3>🧠 Smart Projects</h3><p>AI & logic made simple.</p></div>
+      <div class="feature"><h3>🎮 Interactive</h3><p>Control assistants & robots.</p></div>
+      <div class="feature"><h3>📚 Learning</h3><p>Build real working projects.</p></div>
+      <div class="feature"><h3>👦 Student-Friendly</h3><p>Made by a student, for students.</p></div>
     </div>
   </section>
 
   <!-- ABOUT -->
   <section id="about">
     <h2>About Nimit Generates</h2>
-    <p>
-      Nimit Generates helps young learners explore AI, coding & robotics through real, working projects.
-      Designed for students who want to build things that actually work.
-      Learn, code, create — and have fun doing it.
-    </p>
+    <p>Nimit Generates helps young learners explore AI, coding & robotics through real, working projects.</p>
   </section>
 
   <!-- FOOTER -->
@@ -365,16 +304,39 @@
     © 2025 Nimit Generates — Built for curious creators.
   </footer>
 
-  <!-- Fade-in Animation -->
+  <!-- Fade-in Cards + Theme System -->
   <script>
-    const cards = document.querySelectorAll('.card');
+    const cards = document.querySelectorAll(".card");
     const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) entry.target.classList.add('visible');
+      entries.forEach(e => {
+        if (e.isIntersecting) e.target.classList.add("visible");
       });
     });
-
     cards.forEach(card => observer.observe(card));
+
+    // Load saved theme
+    if (localStorage.getItem("theme") === "light") {
+      document.body.classList.add("light");
+      document.querySelector(".theme-toggle").innerHTML = "🌚 Dark Mode";
+      updateParticleMode();
+    }
+
+    function toggleTheme() {
+      document.body.classList.toggle("light");
+
+      const mode = document.body.classList.contains("light") ? "light" : "dark";
+      localStorage.setItem("theme", mode);
+
+      document.querySelector(".theme-toggle").innerHTML =
+        mode === "light" ? "🌚 Dark Mode" : "🌙 Light Mode";
+
+      updateParticleMode();
+    }
+
+    // Keyboard shortcut: L = toggle theme
+    document.addEventListener("keydown", e => {
+      if (e.key.toLowerCase() === "l") toggleTheme();
+    });
   </script>
 
 </body>
