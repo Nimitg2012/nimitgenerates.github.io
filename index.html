@@ -5,12 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Nimit Generates</title>
 
-  <!-- Favicon + App Icons -->
-  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
-  <link rel="manifest" href="site.webmanifest">
-  <link rel="shortcut icon" href="favicon.ico">
+  <!-- Favicon + App Icons (UPDATED) -->
+  <link rel="apple-touch-icon" sizes="180x180" href="logo/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="logo/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="logo/favicon-16x16.png">
+  <link rel="manifest" href="logo/site.webmanifest">
+  <link rel="shortcut icon" href="logo/favicon.ico">
 
   <!-- FONT -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
@@ -26,7 +26,6 @@
       position: relative;
     }
 
-    /* 🌌 Floating Particles */
     .particle {
       position: fixed;
       width: 4px; height: 4px;
@@ -42,7 +41,6 @@
       100% { transform: translateY(-120vh) translateX(20vw); opacity: 0; }
     }
 
-    /* HEADER */
     header {
       position: fixed;
       top: 0; left: 0;
@@ -72,7 +70,6 @@
       position: relative;
     }
 
-    /* ⚡ Tesla-style underline */
     nav a::after {
       content: "";
       position: absolute;
@@ -87,7 +84,6 @@
       width: 100%;
     }
 
-    /* HERO */
     .hero {
       height: 100vh;
       display: flex;
@@ -99,7 +95,6 @@
       position: relative;
     }
 
-    /* 🔥 Animated Radial Glow */
     .glow {
       position: absolute;
       width: 600px;
@@ -135,7 +130,6 @@
       margin-top: 1rem;
     }
 
-    /* PROJECT GRID */
     .projects {
       padding: 6rem 3rem;
       display: grid;
@@ -145,7 +139,6 @@
       z-index: 5;
     }
 
-    /* ✨ Card Light Glow Background */
     .projects::before {
       content: "";
       position: absolute;
@@ -191,7 +184,6 @@
       margin-bottom: 1.2rem;
     }
 
-    /* FUTURISTIC BUTTONS */
     .card button {
       background: linear-gradient(90deg, #ffffff, #bdbdbd);
       color: black;
@@ -208,7 +200,6 @@
       transform: scale(1.05);
     }
 
-    /* FEATURES */
     .features {
       padding: 5rem 3rem;
       text-align: center;
@@ -236,7 +227,6 @@
       border-color: rgba(255,255,255,0.25);
     }
 
-    /* ABOUT */
     #about {
       padding: 5rem 3rem;
       text-align: center;
@@ -250,7 +240,6 @@
       margin-inline: auto;
     }
 
-    /* FOOTER */
     footer {
       padding: 2rem;
       text-align: center;
@@ -263,7 +252,6 @@
 
 <body>
 
-  <!-- 🌌 AUTO-GENERATED PARTICLES -->
   <script>
     for (let i = 0; i < 25; i++) {
       const p = document.createElement("div");
@@ -275,7 +263,6 @@
     }
   </script>
 
-  <!-- HEADER -->
   <header>
     <h1>Nimit Generates</h1>
     <nav>
@@ -285,60 +272,28 @@
     </nav>
   </header>
 
-  <!-- HERO -->
   <section class="hero">
     <div class="glow"></div>
-
     <h2>Build Smarter. Build Cooler.</h2>
     <p>AI Assistants • Robots • Python Tools — by a student, for students.</p>
   </section>
 
-  <!-- PROJECTS -->
   <section id="projects" class="projects">
-    <div class="card">
-      <h3>Jarvis</h3>
-      <p>An intelligent assistant with voice commands, jokes, weather & more.</p>
-      <button onclick="window.open('https://github.com/Nimitg2012/JARVIS')">Download</button>
-    </div>
+    <div class="card"><h3>Jarvis</h3><p>An intelligent assistant with voice commands, jokes, weather & more.</p><button onclick="window.open('https://github.com/Nimitg2012/JARVIS')">Download</button></div>
 
-    <div class="card">  
-      <h3>Spyder</h3>
-      <p>A Spider-themed adaptive assistant that learns your style.</p>
-      <button onclick="window.open('https://github.com/Nimitg2012/spyderr')">Download</button>
-    </div>
+    <div class="card"><h3>Spyder</h3><p>A Spider-themed adaptive assistant that learns your style.</p><button onclick="window.open('https://github.com/Nimitg2012/spyderr')">Download</button></div>
 
-    <div class="card">
-      <h3>Pixy</h3>
-      <p>Voice-activated assistant for notes, tasks & productivity.</p>
-      <button onclick="window.open('https://github.com/Nimitg2012/Pixy')">Download</button>
-    </div>
+    <div class="card"><h3>Pixy</h3><p>Voice-activated assistant for notes, tasks & productivity.</p><button onclick="window.open('https://github.com/Nimitg2012/Pixy')">Download</button></div>
 
-    <div class="card">
-      <h3>SpyderRobot</h3>
-      <p>Python-powered 4-legged robot for Arduino student makers.</p>
-      <button onclick="window.open('https://github.com/Nimitg2012/Spyderr-Robot')">Download</button>
-    </div>
+    <div class="card"><h3>SpyderRobot</h3><p>Python-powered 4-legged robot for Arduino student makers.</p><button onclick="window.open('https://github.com/Nimitg2012/Spyderr-Robot')">Download</button></div>
 
-    <div class="card">
-      <h3>Squirrel</h3>
-      <p>Smart calculator assistant using brain-style reasoning.</p>
-      <button onclick="window.open('https://github.com/Nimitg2012/Squirrel')">Download</button>
-    </div>
+    <div class="card"><h3>Squirrel</h3><p>Smart calculator assistant using brain-style reasoning.</p><button onclick="window.open('https://github.com/Nimitg2012/Squirrel')">Download</button></div>
 
-    <div class="card">
-      <h3>Scriptly</h3>
-      <p>Speak Python into existence. Your personal coding assistant.</p>
-      <button onclick="window.open('https://github.com/Nimitg2012/Scriptly')">Download</button>
-    </div>
+    <div class="card"><h3>Scriptly</h3><p>Speak Python into existence. Your personal coding assistant.</p><button onclick="window.open('https://github.com/Nimitg2012/Scriptly')">Download</button></div>
 
-    <div class="card">
-      <h3>JS4</h3>
-      <p>Next-gen lightning-fast AI calculator for instant answers.</p>
-      <button onclick="window.open('https://github.com/Nimitg2012/JS4')">Download</button>
-    </div>
+    <div class="card"><h3>JS4</h3><p>Next-gen lightning-fast AI calculator for instant answers.</p><button onclick="window.open('https://github.com/Nimitg2012/JS4')">Download</button></div>
   </section>
 
-  <!-- FEATURES -->
   <section class="features">
     <h2>Why Students Love Nimit Generates</h2>
 
@@ -350,22 +305,13 @@
     </div>
   </section>
 
-  <!-- ABOUT -->
   <section id="about">
     <h2>About Nimit Generates</h2>
-    <p>
-      Nimit Generates helps young learners explore AI, coding & robotics through real, working projects.
-      Designed for students who want to build things that actually work.
-      Learn, code, create — and have fun doing it.
-    </p>
+    <p>Nimit Generates helps young learners explore AI, coding & robotics through real, working projects. Designed for students who want to build things that actually work. Learn, code, create — and have fun doing it.</p>
   </section>
 
-  <!-- FOOTER -->
-  <footer>
-    © 2025 Nimit Generates — Built for curious creators.
-  </footer>
+  <footer>© 2025 Nimit Generates — Built for curious creators.</footer>
 
-  <!-- Fade-in Animation -->
   <script>
     const cards = document.querySelectorAll('.card');
     const observer = new IntersectionObserver(entries => {
@@ -373,7 +319,6 @@
         if (entry.isIntersecting) entry.target.classList.add('visible');
       });
     });
-
     cards.forEach(card => observer.observe(card));
   </script>
 
