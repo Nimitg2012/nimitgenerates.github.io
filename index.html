@@ -8,10 +8,7 @@
   <link rel="apple-touch-icon" sizes="180x180" href="logo/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="logo/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="logo/favicon-16x16.png">
-  <link rel="manifest" href="data:application/json;base64,ewogICJuYW1lIjogIk5pbWl0IEdlbmVyYXRlcyIsCiAgInNob3J0X25hbWUiOiAiTmltaXRHZW4iLAogICJkZXNjcmlwdGlvbiI6ICJBSSBBc3Npc3RhbnRzLCBSb2JvdHMsIFB5dGhvbiBUb29scyAtIGJ5IGEgc3R1ZGVudCwgZm9yIHN0dWRlbnRzIiwKICAic3RhcnRfdXJsIjogIi8iLAogICJkaXNwbGF5IjogInN0YW5kYWxvbmUiLAogICJiYWNrZ3JvdW5kX2NvbG9yIjogIiMwZDBkMGQiLAogICJ0aGVtZV9jb2xvciI6ICIjNGE5ZTllIgp9">
-  <meta name="theme-color" content="#4a9e9e">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <link rel="manifest" href="logo/site.webmanifest">
   <link rel="shortcut icon" href="logo/favicon.ico">
 
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
@@ -605,109 +602,6 @@
       z-index: 1;
     }
 
-    .app-download-section {
-      display: flex;
-      gap: 1rem;
-      margin-top: 2.5rem;
-      flex-wrap: wrap;
-      justify-content: center;
-    }
-
-    .app-btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 12px;
-      padding: 14px 28px;
-      border-radius: 14px;
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 1rem;
-      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-      position: relative;
-      overflow: hidden;
-      border: 1px solid rgba(255, 255, 255, 0.1);
-    }
-
-    .app-btn::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: -100%;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-      transition: left 0.5s ease;
-    }
-
-    .app-btn:hover::before {
-      left: 100%;
-    }
-
-    .app-btn-mobile {
-      background: linear-gradient(135deg, var(--teal), #3a8080);
-      color: var(--white);
-      box-shadow: 0 8px 25px rgba(74, 158, 158, 0.3);
-    }
-
-    .app-btn-mobile:hover {
-      transform: translateY(-4px) scale(1.03);
-      box-shadow: 0 12px 35px rgba(74, 158, 158, 0.4), 0 0 25px rgba(74, 158, 158, 0.2);
-    }
-
-    .app-btn-desktop {
-      background: linear-gradient(135deg, var(--blue), #4477bb);
-      color: var(--white);
-      box-shadow: 0 8px 25px rgba(85, 136, 204, 0.3);
-    }
-
-    .app-btn-desktop:hover {
-      transform: translateY(-4px) scale(1.03);
-      box-shadow: 0 12px 35px rgba(85, 136, 204, 0.4), 0 0 25px rgba(85, 136, 204, 0.2);
-    }
-
-    .app-btn-mac {
-      background: linear-gradient(135deg, #a0a0a0, #707070);
-      color: var(--white);
-      box-shadow: 0 8px 25px rgba(160, 160, 160, 0.3);
-    }
-
-    .app-btn-mac:hover {
-      transform: translateY(-4px) scale(1.03);
-      box-shadow: 0 12px 35px rgba(160, 160, 160, 0.4), 0 0 25px rgba(160, 160, 160, 0.2);
-    }
-
-    .app-btn-icon {
-      width: 24px;
-      height: 24px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .app-btn-icon svg {
-      width: 24px;
-      height: 24px;
-      fill: currentColor;
-    }
-
-    .app-btn-text {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      line-height: 1.2;
-    }
-
-    .app-btn-small {
-      font-size: 0.7rem;
-      font-weight: 400;
-      opacity: 0.85;
-    }
-
-    .app-btn-large {
-      font-size: 1rem;
-      font-weight: 600;
-    }
-
     @media (max-width: 768px) {
       header {
         padding: 1rem 1.5rem;
@@ -739,17 +633,6 @@
       .feature {
         width: 100%;
         max-width: 320px;
-      }
-
-      .app-download-section {
-        flex-direction: column;
-        align-items: center;
-      }
-
-      .app-btn {
-        width: 100%;
-        max-width: 280px;
-        justify-content: center;
       }
     }
   </style>
@@ -795,43 +678,6 @@
     <div class="glow-orb glow-orb-2"></div>
     <h2>Build Smarter. Build Cooler.</h2>
     <p>AI Assistants • Robots • Python Tools — by a student, for students.</p>
-    
-    <div class="app-download-section">
-      <a href="#" class="app-btn app-btn-mobile" id="mobileAppBtn" onclick="installApp(event)">
-        <span class="app-btn-icon">
-          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path d="M17 1.01L7 1c-1.1 0-2 .9-2 2v18c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2V3c0-1.1-.9-1.99-2-1.99zM17 19H7V5h10v14zm-4.2-5.78v1.75l3.2-2.99L12.8 9v1.7c-3.11.43-4.35 2.56-4.8 4.7 1.11-1.5 2.58-2.18 4.8-2.18z"/>
-          </svg>
-        </span>
-        <span class="app-btn-text">
-          <span class="app-btn-small">Install on</span>
-          <span class="app-btn-large">Mobile</span>
-        </span>
-      </a>
-      <a href="zipFile.zip" download="NimitGenerates-Windows.zip" class="app-btn app-btn-desktop" id="desktopAppBtn">
-        <span class="app-btn-icon">
-          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path d="M0 3.449L9.75 2.1v9.451H0m10.949-9.602L24 0v11.4H10.949M0 12.6h9.75v9.451L0 20.699M10.949 12.6H24V24l-12.9-1.801"/>
-          </svg>
-        </span>
-        <span class="app-btn-text">
-          <span class="app-btn-small">Download for</span>
-          <span class="app-btn-large">Windows</span>
-        </span>
-      </a>
-      <a href="zipFile.zip" download="NimitGenerates-Mac.zip" class="app-btn app-btn-mac" id="macAppBtn">
-        <span class="app-btn-icon">
-          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
-          </svg>
-        </span>
-        <span class="app-btn-text">
-          <span class="app-btn-small">Download for</span>
-          <span class="app-btn-large">macOS</span>
-        </span>
-      </a>
-    </div>
-
     <div class="scroll-indicator">
       <span>Scroll</span>
       <div class="arrow"></div>
@@ -1131,58 +977,6 @@
 
       cards.forEach(card => observer.observe(card));
       features.forEach(feature => observer.observe(feature));
-    }
-
-    let deferredPrompt;
-    
-    window.addEventListener('beforeinstallprompt', (e) => {
-      e.preventDefault();
-      deferredPrompt = e;
-    });
-
-    function installApp(e) {
-      e.preventDefault();
-      
-      if (deferredPrompt) {
-        deferredPrompt.prompt();
-        deferredPrompt.userChoice.then((choiceResult) => {
-          deferredPrompt = null;
-        });
-      } else {
-        const userAgent = navigator.userAgent.toLowerCase();
-        let message = '';
-        
-        if (/iphone|ipad|ipod/.test(userAgent)) {
-          message = 'To install: Tap the Share button, then "Add to Home Screen"';
-        } else if (/android/.test(userAgent)) {
-          message = 'To install: Tap the menu (3 dots), then "Add to Home Screen" or "Install App"';
-        } else {
-          message = 'To install on mobile: Open this site on your phone, then use your browser menu to "Add to Home Screen"';
-        }
-        
-        alert(message);
-      }
-    }
-
-    if ('serviceWorker' in navigator) {
-      const swCode = `
-        self.addEventListener('install', function(e) {
-          e.waitUntil(
-            caches.open('nimit-gen-v1').then(function(cache) {
-              return cache.addAll(['/']);
-            })
-          );
-        });
-        self.addEventListener('fetch', function(e) {
-          e.respondWith(
-            caches.match(e.request).then(function(response) {
-              return response || fetch(e.request);
-            })
-          );
-        });
-      `;
-      const blob = new Blob([swCode], {type: 'application/javascript'});
-      navigator.serviceWorker.register(URL.createObjectURL(blob)).catch(() => {});
     }
 
     document.addEventListener('DOMContentLoaded', () => {
