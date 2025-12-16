@@ -553,10 +553,83 @@
       line-height: 1.5;
     }
 
+    #suggestions {
+      padding: 8rem 3rem;
+      background: linear-gradient(180deg, rgba(10, 10, 10, 0.98) 0%, rgba(15, 15, 15, 0.95) 100%);
+      position: relative;
+      z-index: 10;
+    }
+
+    .suggestion-form {
+      max-width: 600px;
+      margin: 0 auto;
+      background: linear-gradient(145deg, rgba(35, 35, 35, 0.9), rgba(20, 20, 20, 0.95));
+      padding: 3rem;
+      border-radius: 20px;
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+    }
+
+    .suggestion-form .form-group {
+      margin-bottom: 1.5rem;
+    }
+
+    .suggestion-form label {
+      display: block;
+      color: var(--light-grey);
+      font-size: 0.95rem;
+      margin-bottom: 0.5rem;
+      font-weight: 500;
+    }
+
+    .suggestion-form input,
+    .suggestion-form textarea {
+      width: 100%;
+      padding: 1rem;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 12px;
+      background: rgba(0, 0, 0, 0.3);
+      color: var(--white);
+      font-family: 'Inter', sans-serif;
+      font-size: 1rem;
+      transition: all 0.3s ease;
+    }
+
+    .suggestion-form input:focus,
+    .suggestion-form textarea:focus {
+      outline: none;
+      border-color: var(--teal);
+      box-shadow: 0 0 20px rgba(74, 158, 158, 0.2);
+    }
+
+    .suggestion-form textarea {
+      min-height: 150px;
+      resize: vertical;
+    }
+
+    .suggestion-form button {
+      width: 100%;
+      background: linear-gradient(135deg, var(--teal), var(--blue));
+      color: var(--white);
+      border: none;
+      padding: 1rem 2rem;
+      border-radius: 50px;
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 1rem;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(74, 158, 158, 0.3);
+    }
+
+    .suggestion-form button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 25px rgba(74, 158, 158, 0.4);
+    }
+
     #about {
       padding: 8rem 3rem;
       text-align: center;
-      background: linear-gradient(180deg, rgba(10, 10, 10, 0.98) 0%, var(--black) 100%);
+      background: linear-gradient(180deg, rgba(15, 15, 15, 0.95) 0%, var(--black) 100%);
       position: relative;
       z-index: 10;
     }
@@ -622,7 +695,7 @@
         font-size: 1rem;
       }
 
-      .projects, .features, #about {
+      .projects, .features, #about, #suggestions {
         padding: 4rem 1.5rem;
       }
 
@@ -633,6 +706,10 @@
       .feature {
         width: 100%;
         max-width: 320px;
+      }
+
+      .suggestion-form {
+        padding: 2rem;
       }
     }
   </style>
@@ -669,6 +746,7 @@
     <nav>
       <a href="#projects">Projects</a>
       <a href="https://github.com/Nimitg2012" target="_blank">GitHub</a>
+      <a href="#suggestions">Suggestions</a>
       <a href="#about">About</a>
     </nav>
   </header>
@@ -677,7 +755,7 @@
     <div class="glow-orb"></div>
     <div class="glow-orb glow-orb-2"></div>
     <h2>Build Smarter. Build Cooler.</h2>
-    <p>AI Assistants • Robots • Python Tools — by a student, for students.</p>
+    <p>AI Assistants Robots Python Tools - by a student, for students.</p>
     <div class="scroll-indicator">
       <span>Scroll</span>
       <div class="arrow"></div>
@@ -774,219 +852,211 @@
     </div>
     <div class="features-grid">
       <div class="feature">
-        <span class="feature-icon">🧠</span>
+        <span class="feature-icon">&#129504;</span>
         <h3>Smart Projects</h3>
-        <p>AI, logic & real programming — made simple and accessible.</p>
+        <p>AI, logic & real programming - made simple and accessible.</p>
       </div>
       <div class="feature">
-        <span class="feature-icon">🎮</span>
+        <span class="feature-icon">&#127918;</span>
         <h3>Interactive</h3>
         <p>Talk to assistants, control robots, learn by doing.</p>
       </div>
       <div class="feature">
-        <span class="feature-icon">📚</span>
+        <span class="feature-icon">&#128218;</span>
         <h3>Hands-On Learning</h3>
         <p>Every project helps you grow as a developer.</p>
       </div>
       <div class="feature">
-        <span class="feature-icon">👦</span>
+        <span class="feature-icon">&#128102;</span>
         <h3>Student-Friendly</h3>
         <p>Created by a student, for students everywhere.</p>
       </div>
     </div>
   </section>
 
+  <section id="suggestions">
+    <div class="section-title">
+      <h2>Share Your Suggestions</h2>
+      <p>Have an idea or feedback? Let me know!</p>
+    </div>
+    <form class="suggestion-form" id="suggestionForm">
+      <div class="form-group">
+        <label for="name">Your Name</label>
+        <input type="text" id="name" name="name" placeholder="Enter your name" required>
+      </div>
+      <div class="form-group">
+        <label for="email">Your Email</label>
+        <input type="email" id="email" name="email" placeholder="Enter your email" required>
+      </div>
+      <div class="form-group">
+        <label for="suggestion">Your Suggestion</label>
+        <textarea id="suggestion" name="suggestion" placeholder="Share your ideas, feedback, or suggestions..." required></textarea>
+      </div>
+      <button type="submit">Send Suggestion</button>
+    </form>
+  </section>
+
   <section id="about">
     <h2>About Nimit Generates</h2>
-    <p>Nimit Generates helps young learners explore AI, coding & robotics through real, working projects. Designed for students who want to build things that actually work. Learn, code, create — and have fun doing it.</p>
+    <p>
+      Hi, I'm Nimit - a student developer who loves building AI assistants, robots, and Python tools.
+      I started coding because I wanted to make things that feel smart and fun. Now I share my projects
+      here so other students can learn, experiment, and build along with me. Whether you're new to programming
+      or already into it, you'll find something here that sparks your curiosity.
+    </p>
   </section>
 
   <footer>
-    <p>© 2025 Nimit Generates — Built for curious creators.</p>
+    <p>Made with passion by Nimit Generates</p>
   </footer>
 
   <script>
+    const cards = document.querySelectorAll('.card');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry, index) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => {
+            entry.target.classList.add('visible');
+          }, index * 100);
+        }
+      });
+    }, { threshold: 0.1 });
+
+    cards.forEach(card => observer.observe(card));
+
     function createClouds() {
       const container = document.getElementById('cloudContainer');
       const layers = [
-        { class: 'cloud-fg', count: 4, minSize: 200, maxSize: 400, anim: 'floatCloud1', duration: [15, 25] },
-        { class: 'cloud-mid', count: 5, minSize: 250, maxSize: 450, anim: 'floatCloud2', duration: [20, 35] },
-        { class: 'cloud-bg', count: 6, minSize: 300, maxSize: 500, anim: 'floatCloud3', duration: [25, 40] },
-        { class: 'cloud-fog', count: 3, minSize: 400, maxSize: 700, anim: 'floatCloud2', duration: [30, 50] }
+        { class: 'cloud-fg', count: 4, sizeRange: [200, 400], speedRange: [80, 120] },
+        { class: 'cloud-mid', count: 6, sizeRange: [250, 500], speedRange: [100, 150] },
+        { class: 'cloud-bg', count: 8, sizeRange: [300, 600], speedRange: [150, 200] },
+        { class: 'cloud-fog', count: 3, sizeRange: [500, 900], speedRange: [200, 300] }
       ];
 
       layers.forEach(layer => {
         for (let i = 0; i < layer.count; i++) {
           const cloud = document.createElement('div');
           cloud.className = `cloud ${layer.class}`;
-          const size = Math.random() * (layer.maxSize - layer.minSize) + layer.minSize;
-          const duration = Math.random() * (layer.duration[1] - layer.duration[0]) + layer.duration[0];
+          
+          const size = layer.sizeRange[0] + Math.random() * (layer.sizeRange[1] - layer.sizeRange[0]);
+          const speed = layer.speedRange[0] + Math.random() * (layer.speedRange[1] - layer.speedRange[0]);
           
           cloud.style.cssText = `
             width: ${size}px;
-            height: ${size * 0.5}px;
-            left: ${Math.random() * 120 - 10}%;
+            height: ${size * 0.4}px;
             top: ${Math.random() * 80}%;
+            left: ${Math.random() * 100}%;
             background: radial-gradient(ellipse at center, 
-              rgba(${70 + Math.random() * 30}, ${100 + Math.random() * 50}, ${140 + Math.random() * 60}, 0.4) 0%,
-              rgba(${60 + Math.random() * 20}, ${90 + Math.random() * 40}, ${130 + Math.random() * 50}, 0.2) 40%,
+              rgba(150, 160, 180, ${0.15 + Math.random() * 0.1}) 0%, 
+              rgba(100, 120, 150, ${0.08 + Math.random() * 0.05}) 40%, 
               transparent 70%);
-            animation: ${layer.anim} ${duration}s ease-in-out infinite;
-            animation-delay: ${-Math.random() * duration}s;
+            animation: floatCloud${(i % 3) + 1} ${speed}s ease-in-out infinite;
+            animation-delay: ${-Math.random() * speed}s;
           `;
+          
           container.appendChild(cloud);
         }
       });
     }
 
     function createStreaks() {
-      const body = document.body;
-      const streakCount = 8;
-
-      for (let i = 0; i < streakCount; i++) {
+      for (let i = 0; i < 10; i++) {
         const streak = document.createElement('div');
-        const isSoft = Math.random() > 0.5;
-        streak.className = `streak ${isSoft ? 'streak-soft' : ''}`;
-        const width = 200 + Math.random() * 600;
-        const duration = 8 + Math.random() * 12;
+        streak.className = `streak ${Math.random() > 0.5 ? 'streak-soft' : ''}`;
+        
+        const width = 100 + Math.random() * 400;
+        const top = Math.random() * 100;
+        const left = Math.random() * 100;
+        const duration = 20 + Math.random() * 30;
         
         streak.style.cssText = `
           width: ${width}px;
-          left: ${Math.random() * 100}%;
-          top: ${Math.random() * 100}%;
+          top: ${top}%;
+          left: ${left}%;
           animation: streakFloat ${duration}s ease-in-out infinite;
           animation-delay: ${-Math.random() * duration}s;
         `;
-        body.appendChild(streak);
+        
+        document.body.appendChild(streak);
       }
     }
 
     function createFog() {
       const fogLayer = document.getElementById('fogLayer');
-      const fogCount = 5;
-
-      for (let i = 0; i < fogCount; i++) {
+      
+      for (let i = 0; i < 6; i++) {
         const fog = document.createElement('div');
         fog.className = `fog ${Math.random() > 0.5 ? 'fog-blue' : ''}`;
-        const size = 400 + Math.random() * 400;
-        const duration = 15 + Math.random() * 20;
+        
+        const top = Math.random() * 100;
+        const duration = 30 + Math.random() * 20;
         
         fog.style.cssText = `
-          width: ${size}%;
-          height: ${200 + Math.random() * 200}px;
-          left: ${-20 + Math.random() * 40}%;
-          top: ${Math.random() * 100}%;
+          top: ${top}%;
           animation: fogDrift ${duration}s ease-in-out infinite;
           animation-delay: ${-Math.random() * duration}s;
         `;
+        
         fogLayer.appendChild(fog);
       }
     }
 
     function createParticles() {
-      const body = document.body;
-      const particleCount = 30;
-
-      for (let i = 0; i < particleCount; i++) {
+      for (let i = 0; i < 30; i++) {
         const particle = document.createElement('div');
         particle.className = 'particle';
-        const duration = 12 + Math.random() * 10;
+        
+        const left = Math.random() * 100;
         const size = 2 + Math.random() * 3;
+        const duration = 10 + Math.random() * 10;
+        const delay = Math.random() * duration;
         
         particle.style.cssText = `
+          left: ${left}%;
           width: ${size}px;
           height: ${size}px;
-          left: ${Math.random() * 100}vw;
           animation-duration: ${duration}s;
-          animation-delay: ${-Math.random() * duration}s;
+          animation-delay: -${delay}s;
         `;
-        body.appendChild(particle);
+        
+        document.body.appendChild(particle);
       }
     }
 
-    function initTiltCards() {
-      const cards = document.querySelectorAll('[data-tilt]');
-      
-      cards.forEach(card => {
-        card.addEventListener('mousemove', (e) => {
-          const rect = card.getBoundingClientRect();
-          const x = e.clientX - rect.left;
-          const y = e.clientY - rect.top;
-          const centerX = rect.width / 2;
-          const centerY = rect.height / 2;
-          const rotateX = (y - centerY) / 10;
-          const rotateY = (centerX - x) / 10;
-          
-          card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.02)`;
-        });
+    createClouds();
+    createStreaks();
+    createFog();
+    createParticles();
 
-        card.addEventListener('mouseleave', () => {
-          card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) scale(1)';
-        });
+    cards.forEach(card => {
+      card.addEventListener('mousemove', (e) => {
+        const rect = card.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        const centerX = rect.width / 2;
+        const centerY = rect.height / 2;
+        const rotateX = (y - centerY) / 20;
+        const rotateY = (centerX - x) / 20;
+        
+        card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(0)`;
       });
-    }
-
-    function initParallax() {
-      let ticking = false;
       
-      window.addEventListener('scroll', () => {
-        if (!ticking) {
-          requestAnimationFrame(() => {
-            const scrolled = window.pageYOffset;
-            
-            document.querySelectorAll('.cloud-fg').forEach(cloud => {
-              cloud.style.transform = `translateY(${scrolled * 0.3}px)`;
-            });
-            
-            document.querySelectorAll('.cloud-mid').forEach(cloud => {
-              cloud.style.transform = `translateY(${scrolled * 0.15}px)`;
-            });
-            
-            document.querySelectorAll('.cloud-bg').forEach(cloud => {
-              cloud.style.transform = `translateY(${scrolled * 0.05}px)`;
-            });
-
-            document.querySelectorAll('.streak').forEach(streak => {
-              streak.style.transform = `translateY(${scrolled * 0.1}px)`;
-            });
-
-            document.querySelectorAll('.glow-orb').forEach(orb => {
-              orb.style.transform = `translateY(${scrolled * 0.2}px)`;
-            });
-
-            ticking = false;
-          });
-          ticking = true;
-        }
+      card.addEventListener('mouseleave', () => {
+        card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) translateY(0)';
       });
-    }
+    });
 
-    function initScrollAnimations() {
-      const cards = document.querySelectorAll('.card');
-      const features = document.querySelectorAll('.feature');
+    document.getElementById('suggestionForm').addEventListener('submit', function(e) {
+      e.preventDefault();
       
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach((entry, index) => {
-          if (entry.isIntersecting) {
-            setTimeout(() => {
-              entry.target.classList.add('visible');
-            }, index * 100);
-          }
-        });
-      }, { threshold: 0.1 });
-
-      cards.forEach(card => observer.observe(card));
-      features.forEach(feature => observer.observe(feature));
-    }
-
-    document.addEventListener('DOMContentLoaded', () => {
-      createClouds();
-      createStreaks();
-      createFog();
-      createParticles();
-      initTiltCards();
-      initParallax();
-      initScrollAnimations();
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      const suggestion = document.getElementById('suggestion').value;
+      
+      const subject = encodeURIComponent('Suggestion from ' + name);
+      const body = encodeURIComponent('Name: ' + name + '\nEmail: ' + email + '\n\nSuggestion:\n' + suggestion);
+      
+      window.location.href = 'mailto:nimitgenerates@gmail.com?subject=' + subject + '&body=' + body;
     });
   </script>
 </body>
