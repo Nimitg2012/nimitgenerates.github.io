@@ -458,6 +458,49 @@
       box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4), 0 0 20px rgba(255, 255, 255, 0.1);
     }
 
+    .card-actions {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .download-btn,
+    .visit-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      line-height: 1;
+      font-family: inherit;
+      padding: 0.72rem 1.35rem;
+      font-size: 0.92rem;
+    }
+
+    .visit-btn {
+      background: transparent;
+      color: var(--white);
+      border: 1px solid rgba(255, 255, 255, 0.28);
+      border-radius: 50px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      box-shadow: none;
+    }
+
+    .visit-btn:hover {
+      transform: translateY(-3px) scale(1.02);
+      border-color: rgba(74, 158, 158, 0.55);
+      background: rgba(255, 255, 255, 0.06);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.35);
+    }
+
+    .download-btn:focus-visible,
+    .visit-btn:focus-visible {
+      outline: 2px solid rgba(74, 158, 158, 0.9);
+      outline-offset: 3px;
+    }
+
     .waves-container {
       position: relative;
       width: 100%;
@@ -737,6 +780,10 @@
         max-width: 280px;
         justify-content: center;
       }
+
+      .card-actions {
+        gap: 0.65rem;
+      }
     }
   </style>
 </head>
@@ -833,120 +880,13 @@
     </div>
   </div>
 
-<section id="projects" class="projects">
-  <div class="section-title">
-    <h2>Featured Projects</h2>
-    <p>Explore AI-powered tools built for learning and creating</p>
-  </div>
-
-  <div class="projects-grid">
-
-    <!-- Jarvis -->
-    <div class="card" data-tilt>
-      <div class="card-content">
-        <h3>Jarvis</h3>
-        <p>An intelligent assistant with voice commands, jokes, weather & more.</p>
-        <button
-          class="download-btn"
-          onclick="window.open('https://github.com/Nimitg2012/JARVIS', '_blank')">
-          Download
-        </button>
-      </div>
+  <section id="projects" class="projects">
+    <div class="section-title">
+      <h2>Featured Projects</h2>
+      <p>Explore AI-powered tools built for learning and creating</p>
     </div>
-
-    <!-- Spyder -->
-    <div class="card" data-tilt>
-      <div class="card-content">
-        <h3>Spyder</h3>
-        <p>A Spider-themed adaptive assistant that learns your style.</p>
-        <button
-          class="download-btn"
-          onclick="window.open('https://github.com/Nimitg2012/spyderr', '_blank')">
-          Download
-        </button>
-      </div>
-    </div>
-
-    <!-- Pixy -->
-    <div class="card" data-tilt>
-      <div class="card-content">
-        <h3>Pixy</h3>
-        <p>Voice-activated assistant for notes, tasks & productivity.</p>
-        <button
-          class="download-btn"
-          onclick="window.open('https://github.com/Nimitg2012/Pixy', '_blank')">
-          Download
-        </button>
-      </div>
-    </div>
-
-    <!-- SpyderRobot -->
-    <div class="card" data-tilt>
-      <div class="card-content">
-        <h3>SpyderRobot</h3>
-        <p>Python-powered 4-legged robot for Arduino student makers.</p>
-        <button
-          class="download-btn"
-          onclick="window.open('https://github.com/Nimitg2012/Spyderr-Robot', '_blank')">
-          Download
-        </button>
-      </div>
-    </div>
-
-    <!-- Squirrel -->
-    <div class="card" data-tilt>
-      <div class="card-content">
-        <h3>Squirrel</h3>
-        <p>Smart calculator assistant using brain-style reasoning.</p>
-        <button
-          class="download-btn"
-          onclick="window.open('https://github.com/Nimitg2012/Squirrel', '_blank')">
-          Download
-        </button>
-      </div>
-    </div>
-
-    <!-- Scriptly -->
-    <div class="card" data-tilt>
-      <div class="card-content">
-        <h3>Scriptly</h3>
-        <p>Speak Python into existence. Your personal coding assistant.</p>
-        <button
-          class="download-btn"
-          onclick="window.open('https://github.com/Nimitg2012/Scriptly', '_blank')">
-          Download
-        </button>
-      </div>
-    </div>
-
-    <!-- JS4 -->
-    <div class="card" data-tilt>
-      <div class="card-content">
-        <h3>JS4</h3>
-        <p>Next-gen lightning-fast AI calculator for instant answers.</p>
-        <button
-          class="download-btn"
-          onclick="window.open('https://github.com/Nimitg2012/JS4', '_blank')">
-          Download
-        </button>
-      </div>
-    </div>
-
-    <!-- HoloLab -->
-    <div class="card" data-tilt>
-      <div class="card-content">
-        <h3>HoloLab</h3>
-        <p>Artificial simulation creator.</p>
-        <button
-          class="download-btn"
-          onclick="window.open('https://github.com/Nimitg2012/Hololab', '_blank')">
-          Download
-        </button>
-      </div>
-    </div>
-
-  </div>
-</section>
+    <div class="projects-grid" id="projectsGrid"></div>
+  </section>
 
   <section class="features">
     <div class="section-title">
@@ -1160,7 +1100,86 @@
       features.forEach(feature => observer.observe(feature));
     }
 
+    const projects = [
+      {
+        name: 'Spyder',
+        description: 'A Spider-themed adaptive assistant that learns your style.',
+        repo: 'https://github.com/Nimitg2012/spyderr'
+      },
+      {
+        name: 'SpyderRobot',
+        description: 'Python-powered 4-legged robot for Arduino student makers.',
+        repo: 'https://github.com/Nimitg2012/Spyderr-Robot'
+      },
+      {
+        name: 'Scriptly',
+        description: 'Speak Python into existence. Your personal coding assistant.',
+        repo: 'https://github.com/Nimitg2012/Scriptly'
+      },
+      {
+        name: 'JS4',
+        description: 'Next-gen lightning-fast AI calculator for instant answers.',
+        repo: 'https://github.com/Nimitg2012/JS4'
+      },
+      {
+        name: 'HoloLab',
+        description: 'Artificial simulation creator.',
+        repo: 'https://github.com/Nimitg2012/Hololab'
+      },
+      {
+        name: 'Nutrician',
+        description: 'A nutrition site for healthy eating and better food choices.',
+        href: 'https://nutrician.online'
+      }
+    ];
+
+    function escapeHtml(value) {
+      return String(value).replace(/[&<>"']/g, (char) => ({
+        '&': '&amp;',
+        '<': '&lt;',
+        '>': '&gt;',
+        '"': '&quot;',
+        "'": '&#39;'
+      }[char]));
+    }
+
+    function repoZipUrl(repoUrl) {
+      return `${repoUrl.replace(/\/+$/, '')}/archive/refs/heads/main.zip`;
+    }
+
+    function projectActions(project) {
+      const name = escapeHtml(project.name);
+
+      if (!project.repo) {
+        return `<a class="download-btn" href="${escapeHtml(project.href)}" target="_blank" rel="noopener noreferrer" aria-label="Visit ${name}">Visit</a>`;
+      }
+
+      const repo = escapeHtml(project.repo);
+      const zip = escapeHtml(repoZipUrl(project.repo));
+
+      return `
+        <div class="card-actions">
+          <a class="download-btn" href="${zip}" aria-label="Download ${name} source code">Download</a>
+          <a class="visit-btn" href="${repo}" target="_blank" rel="noopener noreferrer" aria-label="Visit ${name} repository">Visit</a>
+        </div>
+      `;
+    }
+
+    function renderProjects() {
+      const grid = document.getElementById('projectsGrid');
+      grid.innerHTML = projects.map((project) => `
+        <div class="card" data-tilt>
+          <div class="card-content">
+            <h3>${escapeHtml(project.name)}</h3>
+            <p>${escapeHtml(project.description)}</p>
+            ${projectActions(project)}
+          </div>
+        </div>
+      `).join('');
+    }
+
     document.addEventListener('DOMContentLoaded', () => {
+      renderProjects();
       createClouds();
       createStreaks();
       createFog();
