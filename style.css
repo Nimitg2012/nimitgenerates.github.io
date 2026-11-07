@@ -968,6 +968,106 @@ body.nav-open {
   }
 }
 
+.project-catalog {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+  margin-top: 4.5rem;
+}
+
+.catalog-card {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  color: inherit;
+  text-decoration: none;
+  background: var(--bg-raised);
+  border: 1px solid var(--line);
+}
+
+.catalog-card:hover .project-name,
+.catalog-card:focus-visible .project-name {
+  color: var(--accent-text);
+}
+
+.catalog-mark {
+  background: var(--bg);
+  border-bottom: 1px solid var(--line);
+}
+
+.catalog-mark svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.catalog-copy {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 0;
+  padding: 1.5rem 1.35rem 1.35rem;
+}
+
+.catalog-card .project-name {
+  font-size: clamp(2rem, 3vw, 2.75rem);
+  overflow-wrap: anywhere;
+}
+
+.catalog-card .project-summary {
+  max-width: none;
+}
+
+.catalog-note {
+  margin-top: 0.9rem;
+  color: var(--secondary);
+  font-size: 0.8125rem;
+  line-height: 1.55;
+}
+
+.catalog-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: auto;
+  padding-top: 1.5rem;
+}
+
+.catalog-go {
+  align-self: flex-start;
+  margin-top: auto;
+  pointer-events: none;
+}
+
+.catalog-arrow {
+  width: 0.9rem;
+  height: 0.9rem;
+  margin-left: 0.55rem;
+  flex: none;
+}
+
+.button-primary .catalog-arrow {
+  color: var(--bg);
+}
+
+@media (max-width: 480px) {
+  .catalog-actions,
+  .catalog-card > .catalog-copy > .catalog-go {
+    align-self: stretch;
+  }
+
+  .catalog-actions {
+    flex-direction: column;
+  }
+}
+
+@media (min-width: 960px) {
+  .project-catalog {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: stretch;
+  }
+}
+
 .nutrician-link {
   position: fixed;
   right: 1.25rem;
